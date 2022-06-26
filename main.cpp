@@ -1,36 +1,26 @@
 #include <iostream>
-#define MAX_L 30
-#define MAX_C 30
+#define MAX 100
 using namespace std;
 
 int main()
 {
-    /*Faça um programa que, dados os números n, m (n,m <=30),
-    lê do usuário os valores de uma matriz A de inteiros de dimensão n x m.
-    Depois, o programa deve ler um número x e imprimir uma mensagem indicando se
-    a matriz possui algum elemento cujo valor é x.*/
+    /*Acima da médiaEscreva um programa que lê n (n <= 100) números reais e
+    imprime quantos desses números são maiores do que a média deles.*/
 
-   int x, n, m, i, j, matriz[MAX_L][MAX_C], cont=0;
-    cin>> n >> m;
-    for(i=1;i<=n;i++){
-        for(j=1;j<=m;j++){
-            cin>>matriz[i][j];
+    int n, i, cont=0;
+    float v[MAX], soma=0, media;
+    cin>>n;
+    for(i=0;i<n;i++){
+        cin>>v[i];
+        soma=soma+v[i];
+    }
+    media=soma/n;
+    cout<<"Media: "<<media<<endl;
+    for(i=0;i<n;i++){
+        if(v[i]>media){
+            cont++;
         }
     }
-    cin>>x;
-    for(i=1;i<=n;i++){
-        for(j=1;j<=m;j++){
-            if(matriz[i][j]==x){
-                cont++;
-            }
-        }
-    }
-    if(cont==0){
-        cout<<"Matriz nao tem elemento: "<<x<<endl;
-    }else{
-        cout<<"Matriz tem elemento: "<<x<<endl;
-    }
-
-
+    cout<<"Valores acima da media: "<<cont<<endl;
     return 0;
 }
