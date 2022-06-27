@@ -45,3 +45,5 @@ int vetores(int v1[MAX], int v2[MAX], int v3[MAX], int n){
         cout<<v1[i]<<"     ";
      }
 }
+
+//essa questão tem um erro, depois faço a correção
